@@ -23,9 +23,27 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   })
 
+  const showPage = document.getElementById("show-welcome-page-btn")
+  const welcomePage = document.getElementById("welcome-page")
+  const menuPage = document.getElementById("menu-page")
+  const listPage = document.getElementById("list-page")
+  const searchPage = document.getElementById("search-page")
+  const genreSelection = document.getElementById("genres")
+  const animeShowPage = document.getElementById("anime-show-page")
+
+  $( showPage ).click(function () {
+    togglePages(menuPage)
+  });
 
 })
 
+function togglePages(page) {
+  if ( $( page).is( ":hidden" ) ) {
+    $( page ).slideDown( "slow" );
+  } else {
+    $( page ).hide();
+  }
+}
 
 function createUser(username) {
   const userId = document.getElementById("user-id")

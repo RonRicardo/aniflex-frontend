@@ -6,7 +6,7 @@
     <!-- this is for bootstrap  -->
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css
 " rel="stylesheet">
-
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
   <body>
 
@@ -35,7 +35,7 @@
 </nav>
 <!--  nav bar -->
 
-
+<button id="show-welcome-page-btn" type="button" name="button">Show</button>
 <!--  card  -->
 <div class="jumbotron align-self-center">
   <div class="container justify-content-sm-center">
@@ -58,94 +58,103 @@
 <!-- this was all the card yeah -->
 
 <!-- welcome landing page -->
-  <div class="container">
-    <p id="user-id" style="display: none;"></p>
-    <header class="row justify-content-center">
-      <h1>Welcome to AniFlex</h1>
-    </header>
-  <br><br>
-    <main class="container">
-      <div class="row justify-content-center">
-        <form class="form-group" id="username-form" action="" method="post">
-          <label for="username">Choose your username to get started</label>
-          <input class="form-control" id="username-input" type="text" name="username" id="username" value="">
-        </form>
-      </div>
-    </main>
+  <div id="welcome-page">
+    <div class="container">
+      <p id="user-id" style="display: none;"></p>
+      <header class="row justify-content-center">
+        <h1>Welcome to AniFlex</h1>
+      </header>
+      <br><br>
+      <main class="container">
+        <div class="row justify-content-center">
+          <form class="form-group" id="username-form" action="" method="post">
+            <label for="username">Choose your username to get started</label>
+            <input class="form-control" id="username-input" type="text" name="username" id="username" value="">
+          </form>
+        </div>
+      </main>
+    </div>
   </div>
 <!-- end of welcome landing page -->
 
 <!-- menu page -->
-  <div class="container">
-    <header class="row justify-content-center">
-      <h1>What would you like to do?</h1>
-    </header>
-    <br><br>
+  <div id="menu-page">
+    <div class="container">
+      <header class="row justify-content-center">
+        <h1>What would you like to do?</h1>
+      </header>
+      <br><br>
 
-    <main class="container">
-      <div class="row justify-content-center">
-        <h3 onclick="renderLists()">Have a gander at your lists</h3><br>
-      </div>
-      <div class="row justify-content-center">
-        <h3 onclick="renderSearch()">Get a recommendation!</h3>
-      </div>
-    </main>
+      <main class="container">
+        <div class="row justify-content-center">
+          <h3 onclick="renderLists()">Have a gander at your lists</h3><br>
+        </div>
+        <div class="row justify-content-center">
+          <h3 onclick="renderSearch()">Get a recommendation!</h3>
+        </div>
+      </main>
+    </div>
   </div>
 <!-- end of menu page -->
 
 <!-- user's lists -->
-
-  <ul class="list-group">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      A list of shows
-      <span class="badge badge-primary badge-pill">14</span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-     Yet another list of shows
-      <span class="badge badge-primary badge-pill">2</span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      God, these people love shows
-      <span class="badge badge-primary badge-pill">1</span>
-    </li>
-  </ul>
+  <div id="list-page">
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        A list of shows
+        <span class="badge badge-primary badge-pill">14</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Yet another list of shows
+        <span class="badge badge-primary badge-pill">2</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        God, these people love shows
+        <span class="badge badge-primary badge-pill">1</span>
+      </li>
+    </ul>
+  </div>
 
 <!-- end of user's lists -->
 
 <!-- search / recommendation page -->
-  <div class="container">
-    <header class="row justify-content-center">
-      <h1>Find your new obsession here!</h1>
-    </header>
-    <br><br>
+  <div id="search-page">
+    <div class="container">
+      <header class="row justify-content-center">
+        <h1>Find your new obsession here!</h1>
+      </header>
+      <br><br>
 
-    <main class="container">
-      <div class="row justify-content-center">
-        <h4 onclick="searchRecommendation()">Genre</h4>
-      </div>
-    </main>
+      <main class="container">
+        <div class="row justify-content-center">
+          <h4 onclick="searchRecommendation()">Genre</h4>
+        </div>
+      </main>
+    </div>
   </div>
 <!-- end of search / recommendation page -->
 
 <!-- genre selection -->
-  <div class="row">
+  <div id="genres">
+    <div class="row">
       <div class="col">
         <ul class="list-group">
-    <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Cras justo odio</li>
         </ul>
       </div>
+    </div>
   </div>
 <!-- end of genre selection -->
 
 <!-- anime show page -->
-  <div class="container">
-
-    <img class="anime-image" src="" alt=""></img>
-    <h3 id='anime-title'></h2>
-      <div class="anime-body">
-        <p class="anime-description"></p>
+  <div id="anime-show-page">
+    <div class="container">
+      <img class="anime-image" src="" alt=""></img>
+      <h3 id='anime-title'></h2>
+        <div class="anime-body">
+          <p class="anime-description"></p>
+        </div>
       </div>
-
   </div>
 <!-- end of anime show page -->
 
@@ -160,7 +169,7 @@
 <!-- end of js files -->
 
 <!-- this is for bootstrap -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 <!-- end of bootstrap -->
