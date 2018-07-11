@@ -36,8 +36,9 @@
 <!--  nav bar -->
 
 <button id="show-welcome-page-btn" type="button" name="button">Show</button>
+
 <!--  card  -->
-<div class="jumbotron align-self-center">
+<div class="jumbotron align-self-center" style="display: none;">
   <div class="container justify-content-sm-center">
 
     <blockquote class="blockquote text-center">
@@ -78,7 +79,7 @@
 <!-- end of welcome landing page -->
 
 <!-- menu page -->
-  <div id="menu-page">
+  <div id="menu-page" style="display: none;">
     <div class="container">
       <header class="row justify-content-center">
         <h1>What would you like to do?</h1>
@@ -98,7 +99,7 @@
 <!-- end of menu page -->
 
 <!-- user's lists -->
-  <div id="list-page">
+  <div id="list-page" style="display: none;">
     <ul class="list-group">
       <li class="list-group-item d-flex justify-content-between align-items-center">
         A list of shows
@@ -118,7 +119,7 @@
 <!-- end of user's lists -->
 
 <!-- search / recommendation page -->
-  <div id="search-page">
+  <div id="search-page" style="display: none;">
     <div class="container">
       <header class="row justify-content-center">
         <h1>Find your new obsession here!</h1>
@@ -127,7 +128,8 @@
 
       <main class="container">
         <div class="row justify-content-center">
-          <h4 onclick="searchRecommendation()">Genre</h4>
+          <!-- <h4 onclick="searchRecommendation()">Genre</h4> -->
+          <h4 onclick="showGenres()">Genre</h4>
         </div>
       </main>
     </div>
@@ -135,7 +137,7 @@
 <!-- end of search / recommendation page -->
 
 <!-- genre selection -->
-  <div id="genres">
+  <div id="genres" style="display: none;">
     <div class="row">
       <div class="col">
         <ul class="list-group">
@@ -147,7 +149,7 @@
 <!-- end of genre selection -->
 
 <!-- anime show page -->
-  <div id="anime-show-page">
+  <div id="anime-show-page" style="display: none;">
     <div class="container">
       <img class="anime-image" src="" alt=""></img>
       <h3 id='anime-title'></h2>

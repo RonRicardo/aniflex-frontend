@@ -23,3 +23,18 @@ let animeListRender = (list) => list.forEach(listItem => {
         let unordered = document.querySelector('.list-group');
         unordered.appendChild(aniListEl);
 })
+
+const genreSelection = document.getElementById("genres")
+
+function showGenres() {
+  togglePages(genreSelection)
+  searchRecommendation()
+}
+
+function togglePages(page) {
+  if ( $( page).is( ":hidden" ) ) {
+    $( page ).slideDown( "slow" );
+  } else {
+    $( page ).hide();
+  }
+}

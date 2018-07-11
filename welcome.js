@@ -9,41 +9,21 @@ document.addEventListener("DOMContentLoaded", ()=>{
     console.log('form submitted');
     const username = e.target.lastElementChild.value
 
-    // save to DB
+    createUser(username)
     console.log('username created');
 
     usernameInput.value = ""
 
-    // insert a loading sign
+    const showPage = document.getElementById("show-welcome-page-btn")
+    const welcomePage = document.getElementById("welcome-page")
+    const menuPage = document.getElementById("menu-page")
 
-    // create user
-    createUser(username)
-    // render next page
-    // document.location.href="menu.html"
+    togglePages(menuPage)
+    togglePages(welcomePage)
 
   })
-
-  const showPage = document.getElementById("show-welcome-page-btn")
-  const welcomePage = document.getElementById("welcome-page")
-  const menuPage = document.getElementById("menu-page")
-  const listPage = document.getElementById("list-page")
-  const searchPage = document.getElementById("search-page")
-  const genreSelection = document.getElementById("genres")
-  const animeShowPage = document.getElementById("anime-show-page")
-
-  $( showPage ).click(function () {
-    togglePages(menuPage)
-  });
-
 })
 
-function togglePages(page) {
-  if ( $( page).is( ":hidden" ) ) {
-    $( page ).slideDown( "slow" );
-  } else {
-    $( page ).hide();
-  }
-}
 
 function createUser(username) {
   const userId = document.getElementById("user-id")
@@ -58,4 +38,12 @@ function createUser(username) {
     .then(res => res.json())
     .then(data => userId.dataset.id = data.id)
     .then(()=>console.log('set id'))
+}
+
+function togglePages(page) {
+  if ( $( page).is( ":hidden" ) ) {
+    $( page ).slideDown( "slow" );
+  } else {
+    $( page ).hide();
+  }
 }
