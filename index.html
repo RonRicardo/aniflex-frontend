@@ -59,14 +59,15 @@
 <!-- this was all the card yeah -->
 
 <!-- welcome landing page -->
-  <div id="welcome-page">
-    <div class="container">
+<div id="welcome-page" class="container" style="position: relative; top: 100px;">
+  <div class="col-md-8 offset-md-2">
+    <div class="card" style="padding: 10%;">
       <p id="user-id" style="display: none;"></p>
       <header class="row justify-content-center">
-        <h1>Welcome to AniFlex</h1>
+        <h1 class="">Welcome to AniFlex</h1>
       </header>
       <br><br>
-      <main class="container">
+      <main>
         <div class="row justify-content-center">
           <form class="form-group" id="username-form" action="" method="post">
             <label for="username">Choose your username to get started</label>
@@ -76,62 +77,72 @@
       </main>
     </div>
   </div>
+</div>
 <!-- end of welcome landing page -->
 
 <!-- menu page -->
-  <div id="menu-page" style="display: none;">
-    <div class="container">
-      <header class="row justify-content-center">
-        <h1>What would you like to do?</h1>
-      </header>
-      <br><br>
-
-      <main class="container">
-        <div class="row justify-content-center">
-          <h3 onclick="renderLists()">Have a gander at your lists</h3><br>
-        </div>
-        <div class="row justify-content-center">
-          <h3 onclick="renderSearch()">Get a recommendation!</h3>
-        </div>
-      </main>
+  <div id="menu-page" class="container" style="position: relative; top: 100px; display: none;">
+    <div class="col-md-8 offset-md-2">
+      <div class="card" style="padding: 10%;">
+        <header class="row justify-content-center">
+          <h1 class="card-title">What would you like to do?</h1>
+        </header>
+        <br><br>
+        <main>
+          <div class="row justify-content-center">
+            <h3 class="card-text" onclick="renderLists()">Have a gander at your lists</h3><br>
+          </div>
+          <div class="row justify-content-center">
+            <h3 class="card-text" onclick="renderSearch()">Get a recommendation!</h3>
+          </div>
+        </main>
+      </div>
     </div>
   </div>
 <!-- end of menu page -->
 
 <!-- user's lists -->
-  <div id="list-page" style="display: none;">
-    <ul class="list-group">
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        A list of shows
-        <span class="badge badge-primary badge-pill">14</span>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        Yet another list of shows
-        <span class="badge badge-primary badge-pill">2</span>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        God, these people love shows
-        <span class="badge badge-primary badge-pill">1</span>
-      </li>
-    </ul>
+<div id="list-page" style="display: none;">
+  <div class="container" style="position: relative; top: 100px;">
+    <div class="col-md-8 offset-md-2">
+      <div class="card" style="padding: 10%;">
+        <header class="row justify-content-center">
+          <h1 class="card-title">Your Watch Lists</h1>
+        </header><br>
+        <main class="row justify-content-center list-group" style="margin:0px;">
+          <li class="list-group-item-action d-flex justify-content-between align-items-center" style="margin:5px; padding: 10px;">
+            A list of shows
+            <span class="badge badge-primary badge-pill" style="background-color: #3CB371;">14</span>
+          </li>
+          <li class="list-group-item-action d-flex justify-content-between align-items-center" style="margin: 5px; padding: 10px;">
+            Yet another list of shows
+            <span class="badge badge-primary badge-pill" style="background-color: #3CB371;">2</span>
+          </li>
+          <li class="list-group-item-action d-flex justify-content-between align-items-center" style="margin: 5px; padding: 10px;">
+            God, these people love shows
+            <span class="badge badge-primary badge-pill" style="background-color: #3CB371;">1</span>
+          </li>
+        </main>
+      </div>
+    </div>
   </div>
+</div>
 
 <!-- end of user's lists -->
 
 <!-- search / recommendation page -->
-  <div id="search-page" style="display: none;">
-    <div class="container">
-      <header class="row justify-content-center">
-        <h1>Find your new obsession here!</h1>
-      </header>
-      <br><br>
-
-      <main class="container">
-        <div class="row justify-content-center">
-          <!-- <h4 onclick="searchRecommendation()">Genre</h4> -->
+  <div id="search-page" class="container" style="display: none; position: relative; top: 100px;">
+    <div class="col-md-8 offset-md-2">
+      <div class="card" style="padding: 10%;">
+        <header class="row justify-content-center">
+          <h1 class="card-title">Find your new obsession here!</h1>
+        </header>
+        <br>
+        <main class="row justify-content-center">
+            <!-- <h4 onclick="searchRecommendation()">Genre</h4> -->
           <h4 onclick="showGenres()">Genre</h4>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   </div>
 <!-- end of search / recommendation page -->
