@@ -7,6 +7,7 @@ const userId = document.getElementById("user-id")
 const menuPage = document.getElementById("menu-page")
 const listPage = document.getElementById("list-page")
 const searchPage = document.getElementById("search-page")
+const animeShowPage = document.getElementById("anime-show-page")
 
 function renderLists() {
   console.log('lists');
@@ -21,6 +22,7 @@ function renderLists() {
 function renderSearch() {
   console.log('search');
   $(menuPage).hide()
+  $(animeShowPage).hide()
   togglePages(searchPage)
 }
 

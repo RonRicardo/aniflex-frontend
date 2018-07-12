@@ -37,3 +37,7 @@ h2 {
 .badge-pill {
   background-color: #30AD30;
 }
+
+.anime-image {
+  max-width: 300px;
+}

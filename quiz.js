@@ -16,7 +16,8 @@ const renderRecommendedShow = (response) => {
     let description = response['description'];
     let aniListUrl =  response['url'];
       animeImage.setAttribute('src', imageUrl);
-      animeTitle.innerText = title;
+      // animeTitle.innerText = title;
+      animeTitle.innerHTML = `${title}<button type="button" id="add-to-list" class="add-to-list" name="add-to-list">+</button>`
       animeDescription.innerText = description;
       seeMore.setAttribute('href', aniListUrl);
     $(searchPage).hide()

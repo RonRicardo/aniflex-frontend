@@ -107,60 +107,49 @@
 <!-- end of user's lists -->
 
 <!-- search / recommendation page -->
-  <div id="search-page" class="container" style="display: none; position: relative; top: 100px;">
-    <div class="col-md-8 offset-md-2 outside">
-      <div class="card" style="padding: 10%;">
-        <header class="row justify-content-center">
-          <h1 class="card-title">Find your new obsession here!</h1>
+<div id="search-page" class="container" style="display: none;">
+  <div class="row align-items-center wrapper">
+    <div class="col">
+      <div class="card text-center">
+        <header class="card-header">
+          <h1>Find your new obsession here!</h1>
         </header>
-        <br>
-        <main class="row justify-content-center">
-            <!-- <h4 onclick="searchRecommendation()">Genre</h4> -->
-            <div id="quiz-page">
-              <div class="container">
-                  <h3>How are you feeling today?</h3>
-                  <!-- <form onclick="myFunction()"> -->
-                  <form id='quiz-form'>
-                    <input type="radio" name="quizEntry" value="happy"> Happy!<br/>
-                    <input type="radio" name="quizEntry" value="sad"> A bit sad...<br/>
-                    <input type="radio" name="quizEntry" value="tired"> Exhausted from coding bootcamp and looking for an emotional escape.<br/>
-                    <input type="radio" name="quizEntry" value="random"> I dunno, just show me something!<br/>
-                    <input type="submit" class="btn btn-info" value="Submit Button">
-                  </form>
-              </div>
-            </div>
-          <!-- <h4 onclick="showGenres()">Genre</h4> -->
+        <main id="quiz-page"class="card-body">
+          <h3>How are you feeling today?</h3>
+          <form id='quiz-form'>
+            <input type="radio" name="quizEntry" value="happy"> Happy!<br/>
+            <input type="radio" name="quizEntry" value="sad"> A bit sad...<br/>
+            <input type="radio" name="quizEntry" value="tired"> Exhausted from coding bootcamp and looking for an emotional escape.<br/>
+            <input type="radio" name="quizEntry" value="random"> I dunno, just show me something!<br/>
+            <input type="submit" class="btn btn-info" value="Submit Button">
+          </form>
         </main>
       </div>
     </div>
   </div>
+</div>
 <!-- end of search / recommendation page -->
 
-<!-- genre selection -->
-  <div id="genres" style="display: none;">
-    <div class="row">
-      <div class="col">
-        <ul class="list-group">
-          <li class="list-group-item">Cras justo odio</li>
-        </ul>
+<!-- anime show page -->
+<div id="anime-show-page" class="container" style="display: none;">
+  <div class="row align-items-center wrapper">
+    <div class="col">
+      <img class="card-img-top anime-image" src="" alt="">
+      <div class="card text-center">
+        <header class="card-header">
+          <h1 id="anime-title">
+            <button class="btn btn-warning"type="button" id="add-to-list" name="add-to-list">+</button>
+          </h1>
+        </header>
+        <main class="card-body">
+          <h4 class="anime-description"></h4>
+          <a href="" id="see-more-link" target="_blank" onclick="alert('Opening a new tab!')">See more?</a>
+          <h6 class="card-text" onclick="renderSearch()">Get another recommendation!</h6>
+        </main>
       </div>
     </div>
   </div>
-<!-- end of genre selection -->
-
-<!-- anime show page -->
-  <div id="anime-show-page" style="display: none;">
-    <div class="container">
-      <img class="anime-image" src="" alt=""></img>
-      <h3 id='anime-title'></h2>
-        <div class="anime-body">
-          <p class="anime-description"></p>
-          <a href="" id="see-more-link">See more?</a>
-          <!-- need button for adding to list -->
-          <h3 class="card-text" onclick="renderSearch()">Get a recommendation!</h3>
-        </div>
-      </div>
-  </div>
+</div>
 <!-- end of anime show page -->
 
 <!-- js files -->
