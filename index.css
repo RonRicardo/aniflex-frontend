@@ -1,0 +1,39 @@
+#user-id {
+  display: none;
+}
+
+.container {
+  height: 50vh;
+  margin-top: 5rem;
+  align-items: center;
+}
+
+.row {
+  height: 30rem;
+}
+
+.wrapper {
+  background-color: rgba(10, 72, 10, .7);
+  padding: 20%;
+}
+
+.card{
+  background-color: rgba(166, 252, 166, .7);
+  padding: 5%;
+}
+
+h1 {
+  color: #0A480A;
+}
+
+h2 {
+  color: #0A480A;
+}
+
+.list-group-item-action {
+  line-height: 50px;
+}
+
+.badge-pill {
+  background-color: #30AD30;
+}
