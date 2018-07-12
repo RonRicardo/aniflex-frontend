@@ -3,21 +3,23 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 
 })
-
+const userId = document.getElementById("user-id")
 const menuPage = document.getElementById("menu-page")
 const listPage = document.getElementById("list-page")
 const searchPage = document.getElementById("search-page")
 
 function renderLists() {
   console.log('lists');
-  // document.location.href="animeList.html"
-  togglePages(menuPage)
-  togglePages(listPage)
+  if(userId.dataset.id !== "") {
+    togglePages(menuPage)
+    togglePages(listPage)
+  } else {
+    alert("Please login to see your lists")
+  }
 }
 
 function renderSearch() {
   console.log('search');
-  // document.location.href="recommendation.html"
   togglePages(menuPage)
   togglePages(searchPage)
 }

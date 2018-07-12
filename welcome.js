@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     usernameInput.value = ""
 
-    const showPage = document.getElementById("show-welcome-page-btn")
     const welcomePage = document.getElementById("welcome-page")
     const menuPage = document.getElementById("menu-page")
 
