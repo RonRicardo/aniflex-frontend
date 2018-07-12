@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 //defining the list of genres
 let happyGenres = [1, 2, 4, 20] // action, adventure, comedy, parody
 let sadGenres = [6, 8, 40, 41] //demons, drama, psychological, thriller
@@ -22,7 +23,7 @@ const getRandomArrayValue = (arr) => {
   return arr[Math.floor(Math.random() * arr.length)]
 }
 
-const genreQuizzerListener = (event) => {
+const genreQuizzerListener = () => {
   quizForm.addEventListener('submit', (event) => {
     event.preventDefault()
     let quizAnswer = document.querySelector('input[name="quizEntry"]:checked').value;
@@ -50,4 +51,7 @@ const genreQuizzer = (quizVal) => {
     }
     console.log(sendToBackend)
     //whateverTheBackendFunctionIs(sendToBackend)
-}
+
+  }
+// dom content loaded
+})
