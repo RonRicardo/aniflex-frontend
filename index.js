@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   const userId = document.getElementById("user-id")
 
+// user navigation via keydown
+// plans to add icons for users to intuitively know the keydown events
+// maybe altogether get rid of navbar if this works well for clean look
   document.addEventListener("keydown", (e)=>{
     if (e.key==="ArrowDown") {
       console.log('log out');

@@ -28,6 +28,7 @@ const genreSelection = document.getElementById("genres")
 
 function showGenres() {
   togglePages(genreSelection)
+  // build out to take in a term from user selection to pass in to searchRecommendation() and fetch data
   searchRecommendation()
 }
 
