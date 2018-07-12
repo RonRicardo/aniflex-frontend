@@ -9,13 +9,16 @@ const renderRecommendedShow = (response) => {
   const animeImage = document.querySelector('.anime-image')
   const animeDescription = document.querySelector('.anime-description')
   const animeTitle = document.querySelector('#anime-title')
+  let seeMore = document.querySelector('#see-more-link')
   response = response['my_results']
-    let imageUrl =  response['image_url'];
+    let imageUrl = response['image_url'];
     let title = response['title'];
     let description = response['description'];
+    let aniListUrl =  response['url'];
       animeImage.setAttribute('src', imageUrl);
       animeTitle.innerText = title;
       animeDescription.innerText = description;
+      seeMore.setAttribute('href', aniListUrl);
     $(searchPage).hide()
     $(animeShowPage).slideDown("medium")
 }
