@@ -20,7 +20,7 @@ function renderLists() {
 
 function renderSearch() {
   console.log('search');
-  togglePages(menuPage)
+  $(menuPage).hide()
   togglePages(searchPage)
 }
 
