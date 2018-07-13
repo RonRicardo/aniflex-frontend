@@ -13,9 +13,18 @@
 //   },
 //   "my_message": "hello"
 // }
-const searchPage = document.getElementById("search-page");
-const animeShowPage = document.getElementById("anime-show-page");
+document.addEventListener("DOMContentLoaded", ()=>{
+  console.log('recommendedShow page loaded');
+  const addAnimeToListBtn = document.getElementById("add-to-list");
+  addAnimeToListBtn.addEventListener("click", (e)=>{
+    console.log('add to list button clicked');
+    debugger
+  })
 
+})
+
+// searchPage = document.getElementById("search-page");
+// animeShowPage = document.getElementById("anime-show-page");
 
 const renderRecommendedShow = (response) => {
   const animeImage = document.querySelector('.anime-image')
@@ -30,4 +39,19 @@ const renderRecommendedShow = (response) => {
       animeDescription.innerText = description;
     $(searchPage).hide()
     $(animeShowPage).slideDown("medium")
+}
+
+// function getUserLists() {
+//   return fetch('http://localhost:3000/api/v1/watch_lists')
+// }
+
+
+function createList(){
+  return fetch('http://localhost:3000/api/v1/watch_lists',{
+    method: "POST",
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      watch_list: {name:"Watched", user_id: 2, anime_id: 3}
+    })
+  })
 }
