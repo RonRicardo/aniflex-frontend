@@ -6,7 +6,7 @@ const animeShowPage = document.getElementById("anime-show-page");
 
 //functions
 const renderRecommendedShow = (response) => {
-  const animeImage = document.querySelector('.anime-image')
+  const animeImage = document.querySelector('#anime-image')
   const animeDescription = document.querySelector('.anime-description')
   const animeTitle = document.querySelector('#anime-title')
   let seeMore = document.querySelector('#see-more-link')
@@ -17,7 +17,7 @@ const renderRecommendedShow = (response) => {
     let aniListUrl =  response['url'];
       animeImage.setAttribute('src', imageUrl);
       // animeTitle.innerText = title;
-      animeTitle.innerHTML = `${title}<button type="button" id="add-to-list" class="add-to-list" name="add-to-list">+</button>`
+      animeTitle.innerHTML = title
       animeDescription.innerText = description;
       seeMore.setAttribute('href', aniListUrl);
     $(searchPage).hide()
