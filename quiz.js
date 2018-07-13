@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const quizForm = document.getElementById('quiz-form');
 const searchPage = document.getElementById("search-page");
 const animeShowPage = document.getElementById("anime-show-page");
+const animeID = document.getElementById("anime-id-placeholder");
 
 //functions
 function createAnimeObject(response) {
@@ -18,8 +19,12 @@ function createAnimeObject(response) {
   }
   return fetch(url, options)
     .then(res => res.json())
+    .then(res => setAnimeId(res))
 }
 
+function setAnimeId(response) {
+  animeID.setAttribute('data-id', response.id)
+}
 
  function renderRecommendedShow(response) {
   response = response['my_results']
