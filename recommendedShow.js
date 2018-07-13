@@ -18,7 +18,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   const addAnimeToListBtn = document.getElementById("add-to-list");
   const listView = document.getElementById("add-anime-view")
-  const submitAnimetoListBtn = document.getElementById("add-to-list-btn")
+  const submitAnimetoListForm = document.getElementById('create-list-form')
+  const submitAnimetoListBtn = document.getElementById("add-to-list-btn");
+  const listName = document.getElementById('new-list-input');
+  const animeID = document.getElementById("anime-id-placeholder");
+  const userID = document.getElementById("user-id")
+
 
   addAnimeToListBtn.addEventListener("click", (e)=>{
     console.log('add to list button clicked');
@@ -27,13 +32,24 @@ document.addEventListener("DOMContentLoaded", ()=>{
     getUserLists()
   })
 
-  submitAnimetoListBtn.addEventListener("click", (e)=>{
+  submitAnimetoListForm.addEventListener("submit", (e)=>{
+    e.preventDefault()
     console.log('add this anime to this list!');
     // create an anime
-          // 
+          //
     // create watch list and add anime to watch list for user
+    createList(listName.value)
   })
 
+  function createList(listName){
+    return fetch('http://localhost:3000/api/v1/watch_lists',{
+      method: "POST",
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        watch_list: {name: listName, user_id: Number(userID.dataset.id), anime_id: Number(animeID.dataset.id)}
+      })
+    })
+  }
 })
 
 const renderRecommendedShow = (response) => {
@@ -63,14 +79,4 @@ function getUserLists() {
 const listCollection = document.getElementById("list-collection")
 function renderListsInCollection(list){
   return listCollection.innerHTML += `<option value="${list}">${list}</option>`
-}
-
-function createList(){
-  return fetch('http://localhost:3000/api/v1/watch_lists',{
-    method: "POST",
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
-      watch_list: {name:"Watched", user_id: 2, anime_id: 3}
-    })
-  })
 }
