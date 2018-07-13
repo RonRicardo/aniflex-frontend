@@ -34,8 +34,7 @@ function createAnimeObject(response) {
     let description = response['description'];
     let aniListUrl =  response['url'];
       animeImage.setAttribute('src', imageUrl);
-      // animeTitle.innerText = title;
-      animeTitle.innerHTML = `${title} <button type="button" id="add-to-list" class="add-to-list" name="add-to-list">+</button>`
+      animeTitle.innerText = title;
       animeDescription.innerText = description;
       seeMore.setAttribute('href', aniListUrl);
     //
@@ -91,7 +90,6 @@ getRandomIntInclusive = (min, max) => {
       console.log('No one should actually see this ever, but ok.');
     }
     fetcher(sendToBackend)
-    //whateverTheBackendFunctionIs(sendToBackend)
   }
 
 //defining the list of genres
