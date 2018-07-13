@@ -1,43 +1,100 @@
+body {
+  background: url("https://cdn2.slidemodel.com/wp-content/uploads/7382-01-duotone-gradients-powerpoint-templates-16x9-7.jpg")
+}
+
+.container {
+  margin-top: 1%;
+  z-index: 1;
+}
+
+.outside {
+  max-height: 1024px;
+  z-index: 2;
+}
+
 #user-id {
   display: none;
 }
 
-.container {
-  height: 50vh;
-  margin-top: 5rem;
-  align-items: center;
+.col {
+  max-width: 50%;
+  height: 650px;
+  word-wrap: break-word;
+  z-index: 100;
 }
 
-.row {
-  height: 30rem;
+img {
+  opacity: 0.6;
 }
 
-.wrapper {
-  background-color: rgba(10, 72, 10, .7);
-  padding: 20%;
+.img-ver {
+  display: table-cell;
+  vertical-align: middle;
+  min-height: 100%;
 }
 
-.card{
-  background-color: rgba(166, 252, 166, .7);
-  padding: 5%;
+.img-hor {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
-h1 {
-  color: #0A480A;
+.left-panel {
+  overflow: hidden;
 }
 
-h2 {
-  color: #0A480A;
+.right-panel {
+  padding: 10%;
+  text-align: center;
 }
 
-.list-group-item-action {
-  line-height: 50px;
+header {
+  text-decoration: underline;
 }
 
-.badge-pill {
-  background-color: #30AD30;
+#quiz-form input {
+  text-align: left;
 }
 
-.anime-image {
-  max-width: 300px;
+.menu-icon {
+  width: 5rem;
+}
+
+.login-icon {
+  width: 5rem;
+}
+
+.search-icon {
+  width: 5rem;
+}
+
+.list-icon {
+  width: 5rem;
+}
+
+#nav-menu-icon {
+  position: absolute;
+  left: 50%;
+}
+
+.keyup {
+  width: 5rem;
+  position: absolute;
+  left: 50%;
+}
+
+.keydown {
+  width: 5rem;
+  position: absolute;
+  left: 50%;
+}
+
+#nav-logout-icon {
+  position: absolute;
+  left: 50%;
+}
+
+.logout-icon {
+  width: 5rem;
 }
