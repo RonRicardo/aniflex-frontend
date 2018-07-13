@@ -8,7 +8,7 @@ const animeShowPage = document.getElementById("anime-show-page");
 function createAnimeObject(response) {
   const anime = {
     name: response.title,
-    description: response.description,
+    description: response.description
   }
   const url = 'http://localhost:3000/api/v1/animes'
   const options = {
@@ -18,7 +18,6 @@ function createAnimeObject(response) {
   }
   return fetch(url, options)
     .then(res => res.json())
-    .then(jsonResp => console.log)
 }
 
 
