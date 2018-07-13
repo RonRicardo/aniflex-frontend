@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   const addAnimeToListBtn = document.getElementById("add-to-list");
   const listView = document.getElementById("add-anime-view")
+  const submitAnimetoListBtn = document.getElementById("add-to-list-btn")
 
   addAnimeToListBtn.addEventListener("click", (e)=>{
     console.log('add to list button clicked');
@@ -26,10 +27,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
     getUserLists()
   })
 
-})
+  submitAnimetoListBtn.addEventListener("click", (e)=>{
+    console.log('add this anime to this list!');
+    // create an anime
+          // 
+    // create watch list and add anime to watch list for user
+  })
 
-// searchPage = document.getElementById("search-page");
-// animeShowPage = document.getElementById("anime-show-page");
+})
 
 const renderRecommendedShow = (response) => {
   const animeImage = document.querySelector('.anime-image')
