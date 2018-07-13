@@ -5,26 +5,46 @@ const searchPage = document.getElementById("search-page");
 const animeShowPage = document.getElementById("anime-show-page");
 
 //functions
-const renderRecommendedShow = (response) => {
+function createAnimeObject(response) {
+  const anime = {
+    name: response.title,
+    description: response.description,
+  }
+  const url = 'http://localhost:3000/api/v1/animes'
+  const options = {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(anime)
+  }
+  return fetch(url, options)
+    .then(res => res.json())
+    .then(jsonResp => console.log)
+}
+
+
+ function renderRecommendedShow(response) {
+  response = response['my_results']
+  createAnimeObject(response)
   const animeImage = document.querySelector('#anime-image')
   const animeDescription = document.querySelector('.anime-description')
   const animeTitle = document.querySelector('#anime-title')
   let seeMore = document.querySelector('#see-more-link')
-  response = response['my_results']
     let imageUrl = response['image_url'];
     let title = response['title'];
     let description = response['description'];
     let aniListUrl =  response['url'];
       animeImage.setAttribute('src', imageUrl);
       // animeTitle.innerText = title;
-      animeTitle.innerHTML = title
+      animeTitle.innerHTML = `${title} <button type="button" id="add-to-list" class="add-to-list" name="add-to-list">+</button>`
       animeDescription.innerText = description;
       seeMore.setAttribute('href', aniListUrl);
+    //
     $(searchPage).hide()
     $(animeShowPage).slideDown("medium")
+    //
 }
 
-const getRandomIntInclusive = (min, max) => {
+getRandomIntInclusive = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
     let finalNum = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -34,7 +54,7 @@ const getRandomIntInclusive = (min, max) => {
     return finalNum;
   }
 
-const getRandomArrayValue = (arr) => {
+ getRandomArrayValue = (arr) => {
   return arr[Math.floor(Math.random() * arr.length)]
 }
 
@@ -46,14 +66,13 @@ const getRandomArrayValue = (arr) => {
   })
 }
 
-const fetcher = (term) => {
+ fetcher = (term) => {
   fetch(`http://localhost:3000/api/v1/animes/search/${term}`)
     .then(res => res.json())
     .then(parsedResp => renderRecommendedShow(parsedResp))
   }
 
-
-const genreQuizzer = (quizVal) => {
+ genreQuizzer = (quizVal) => {
   let sendToBackend;
   switch (quizVal) {
     case 'happy':
