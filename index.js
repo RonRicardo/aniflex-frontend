@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", ()=>{
   console.log('test.js loaded');
   const welcomePic = document.getElementById('welcome-rand-img')
-  const menuPic = document.getElementById('menu-rand-img')
   const listPic = document.getElementById('list-rand-img')
-  const searchPic = document.getElementById('search-rand-img')
+  const menuPic = document.getElementById('menu-rand-img')
 
   let index = Math.floor((Math.random() * picArray.length))
   console.log(index);
@@ -50,6 +49,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
       $(listPage).hide()
       $(searchPage).hide()
       $(animeShowPage).hide()
+      index = Math.floor((Math.random() * picArray.length))
+      menuPic.src = picArray[index]
       $(menuPage).slideDown("medium")
     }
   })

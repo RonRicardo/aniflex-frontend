@@ -75,17 +75,18 @@ header {
 
 #nav-menu-icon {
   position: absolute;
+  width: 3rem;
   left: 50%;
 }
 
 .keyup {
-  width: 5rem;
+  width: 3rem;
   position: absolute;
   left: 50%;
 }
 
 .keydown {
-  width: 5rem;
+  width: 3rem;
   position: absolute;
   left: 50%;
 }
@@ -96,5 +97,9 @@ header {
 }
 
 .logout-icon {
-  width: 5rem;
+  width: 3rem;
+}
+
+.nav-rows {
+  height: 3rem;
 }

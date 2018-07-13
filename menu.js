@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", ()=>{
   console.log('loaded');
 
-
 })
 const userId = document.getElementById("user-id")
 const menuPage = document.getElementById("menu-page")
@@ -24,8 +23,11 @@ function renderLists() {
 
 function renderSearch() {
   console.log('search');
+  const searchPic = document.getElementById('search-rand-img')
   $(menuPage).hide()
   $(animeShowPage).hide()
+  let index = Math.floor((Math.random() * picArray.length))
+  searchPic.src = picArray[index]
   togglePages(searchPage)
 }
 
