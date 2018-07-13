@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   listOfLists.addEventListener("click", (e)=>{
     if(e.target.dataset.class === "list-name") {
       const listName = e.target.innerText
+      getLists()
 
       debugger
 
@@ -46,13 +47,30 @@ function getLists() {
 }
 
 function renderListsInLists(data) {
-  const lists = new Set(data.filter(el=>el.user_id===Number(userId.dataset.id)).map(e=>e.name));
-  lists.forEach((list)=>{
+  const lists = userLists(data)
+  const listNames = userListNames(lists)
+  listNames.forEach((list)=>{
     if(list !== "") {
-      return listOfLists.innerHTML += `<h4 class="list-group-item-action d-flex justify-content-between align-items-center" data-class="list-name">
-      ${list}</h4>`
+      return listOfLists.innerHTML += listEl(list)
     }
   })
+}
+
+function listEl(list) {
+  return `<h4 class="list-group-item-action d-flex justify-content-between align-items-center" data-class="list-name">
+  ${list}</h4>`
+}
+
+function userLists(data) {
+  return new Set(data.filter(el=>el.user_id === Number(userId.dataset.id)))
+}
+
+function userListNames(lists) {
+  const listNames = []
+  for(list of lists) {
+    listNames.push(list.name)
+  }
+  return listNames
 }
 
 function renderSearch() {
