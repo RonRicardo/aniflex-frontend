@@ -31,7 +31,7 @@ function createUser(username) {
   const options = {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({email: username})
+    body: JSON.stringify({name: username})
   }
   return fetch(url, options)
     .then(res => res.json())
