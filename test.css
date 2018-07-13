@@ -57,5 +57,44 @@ header {
   text-align: left;
 }
 
-main {
+.menu-icon {
+  width: 5rem;
+}
+
+.login-icon {
+  width: 5rem;
+}
+
+.search-icon {
+  width: 5rem;
+}
+
+.list-icon {
+  width: 5rem;
+}
+
+#nav-menu-icon {
+  position: absolute;
+  left: 50%;
+}
+
+.keyup {
+  width: 5rem;
+  position: absolute;
+  left: 50%;
+}
+
+.keydown {
+  width: 5rem;
+  position: absolute;
+  left: 50%;
+}
+
+#nav-logout-icon {
+  position: absolute;
+  left: 50%;
+}
+
+.logout-icon {
+  width: 5rem;
 }

@@ -8,6 +8,7 @@ const menuPage = document.getElementById("menu-page")
 const listPage = document.getElementById("list-page")
 const searchPage = document.getElementById("search-page")
 const animeShowPage = document.getElementById("anime-show-page")
+const welcomePage = document.getElementById("welcome-page")
 
 function renderLists() {
   console.log('lists');
@@ -16,6 +17,8 @@ function renderLists() {
     togglePages(listPage)
   } else {
     alert("Please login to see your lists")
+    $(menuPage).hide()
+    togglePages(welcomePage)
   }
 }
 
