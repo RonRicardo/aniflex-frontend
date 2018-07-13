@@ -15,10 +15,15 @@
 // }
 document.addEventListener("DOMContentLoaded", ()=>{
   console.log('recommendedShow page loaded');
+
   const addAnimeToListBtn = document.getElementById("add-to-list");
+  const listView = document.getElementById("add-anime-view")
+
   addAnimeToListBtn.addEventListener("click", (e)=>{
     console.log('add to list button clicked');
-    debugger
+    // show list view
+    listView.style.display = "block"
+    getUserLists()
   })
 
 })
@@ -41,10 +46,19 @@ const renderRecommendedShow = (response) => {
     $(animeShowPage).slideDown("medium")
 }
 
-// function getUserLists() {
-//   return fetch('http://localhost:3000/api/v1/watch_lists')
-// }
+function getUserLists() {
+  return fetch('http://localhost:3000/api/v1/watch_lists')
+    .then(res => res.json())
+    .then(data => new Set(data.filter(el=>el.user_id===Number(userId.dataset.id)).map(e=>e.name)))
+    .then(lists => {
+      lists.forEach(list => renderListsInCollection(list))
+    })
+}
 
+const listCollection = document.getElementById("list-collection")
+function renderListsInCollection(list){
+  return listCollection.innerHTML += `<option value="${list}">${list}</option>`
+}
 
 function createList(){
   return fetch('http://localhost:3000/api/v1/watch_lists',{

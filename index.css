@@ -103,3 +103,18 @@ header {
 .nav-rows {
   height: 3rem;
 }
+
+#add-anime-view {
+  height: 15rem;
+  width: 30rem;
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  z-index: 300;
+}
+
+#list-collection {
+  /* position: absolute;
+  left: 35%;
+  top: 30%; */
+}
