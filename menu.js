@@ -3,15 +3,17 @@ document.addEventListener("DOMContentLoaded", ()=>{
   const listOfLists = document.getElementById("list-of-lists")
   const userId = document.getElementById("user-id")
 
-  listOfLists.addEventListener("click", (e)=>{
-    if(e.target.dataset.class === "list-name") {
-      const listName = e.target.innerText
-      getLists()
-
-      debugger
-
-    }
-  })
+  // listOfLists.addEventListener("click", (e)=>{
+  //   if(e.target.dataset.class === "list-name") {
+  //     const listName = e.target.innerText
+  //     getLists()
+  //       .then(data => userLists(data))
+  //       .then(lists => getUserAnimeIds(lists))
+  //       .then(anime_ids => fetchUserAnimes(anime_ids))
+  //       .then(res => UserListAnimeNames(userAnimes))
+  //       .then(res => console.log(res))
+  //   }
+  // })
 
 })
 const userId = document.getElementById("user-id")
@@ -22,9 +24,37 @@ const animeShowPage = document.getElementById("anime-show-page")
 const welcomePage = document.getElementById("welcome-page")
 const listOfLists = document.getElementById("list-of-lists")
 
-function getListAnimes() {
-
-}
+// function UserListAnimeNames(animes) {
+//   const animeNames = []
+//   debugger
+//   for(anime in animes) {
+//     animeNames.push(anime.name)
+//   }
+//   return animeNames
+// }
+//
+// let userAnimes = []
+// function fetchUserAnimes(anime_ids) {
+//   userAnimes = []
+//   anime_ids.forEach(id => {
+//     return fetchAnimeById(id)
+//       .then(anime => userAnimes.push(anime))
+//   })
+//   return userAnimes
+// }
+//
+// function fetchAnimeById(id) {
+//   return fetch(`http://localhost:3000/api/v1/animes/${id}`)
+//     .then(res => res.json())
+// }
+//
+// function getUserAnimeIds(lists) {
+//   const animeIds = []
+//   for(list of lists) {
+//     animeIds.push(list.anime_id)
+//   }
+//   return animeIds
+// }
 
 function renderLists() {
   console.log('lists');
