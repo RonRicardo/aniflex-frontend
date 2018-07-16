@@ -43,12 +43,26 @@ document.addEventListener("DOMContentLoaded", ()=>{
   submitAnimetoListForm.addEventListener("submit", (e)=>{
     e.preventDefault()
     console.log('add this anime to this list!');
-    createList(listName.value)
+
+    if (!!listName.value) {
+      console.log('creating a new list to add anime to');
+      createList(listName.value)
+
+    } else {
+
+      console.log('list was selected to add to');
+      const selectedList = Array.from(listCollection.children).filter(x=>{
+      	return x.selected===true
+      })[0].value
+      createList(selectedList)
+    }
+
     listName.value = ""
     $(listView).hide()
   })
 
   function createList(listName){
+
     return fetch('http://localhost:3000/api/v1/watch_lists',{
       method: "POST",
       headers: {'Content-Type': 'application/json'},

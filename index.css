@@ -122,3 +122,7 @@ header {
 
 #add-to-list-btn {
 }
+
+#user-animes-list {
+  list-style-type: none;
+}

@@ -2,18 +2,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
   console.log('loaded');
   const listOfLists = document.getElementById("list-of-lists")
   const userId = document.getElementById("user-id")
+  const userAnimePage = document.getElementById("user-animes-view")
+  const listPage = document.getElementById("list-page")
 
-  // listOfLists.addEventListener("click", (e)=>{
-  //   if(e.target.dataset.class === "list-name") {
-  //     const listName = e.target.innerText
-  //     getLists()
-  //       .then(data => userLists(data))
-  //       .then(lists => getUserAnimeIds(lists))
-  //       .then(anime_ids => fetchUserAnimes(anime_ids))
-  //       .then(res => UserListAnimeNames(userAnimes))
-  //       .then(res => console.log(res))
-  //   }
-  // })
+  listOfLists.addEventListener("click", (e)=>{
+    const selectedList = e.target.dataset.id
+    getUserAnimes(selectedList)
+      .then(data => {
+        renderUserAnimes(data)
+        $(listPage).hide()
+        $(userAnimePage).slideDown()
+      })
+
+  })
 
 })
 const userId = document.getElementById("user-id")
@@ -23,38 +24,22 @@ const searchPage = document.getElementById("search-page")
 const animeShowPage = document.getElementById("anime-show-page")
 const welcomePage = document.getElementById("welcome-page")
 const listOfLists = document.getElementById("list-of-lists")
+const userAnimesList = document.getElementById("user-animes-list")
 
-// function UserListAnimeNames(animes) {
-//   const animeNames = []
-//   debugger
-//   for(anime in animes) {
-//     animeNames.push(anime.name)
-//   }
-//   return animeNames
-// }
-//
-// let userAnimes = []
-// function fetchUserAnimes(anime_ids) {
-//   userAnimes = []
-//   anime_ids.forEach(id => {
-//     return fetchAnimeById(id)
-//       .then(anime => userAnimes.push(anime))
-//   })
-//   return userAnimes
-// }
-//
-// function fetchAnimeById(id) {
-//   return fetch(`http://localhost:3000/api/v1/animes/${id}`)
-//     .then(res => res.json())
-// }
-//
-// function getUserAnimeIds(lists) {
-//   const animeIds = []
-//   for(list of lists) {
-//     animeIds.push(list.anime_id)
-//   }
-//   return animeIds
-// }
+function renderUserAnimes(animes) {
+  return animes.forEach((anime)=>{
+    userAnimesList.innerHTML += renderAnime(anime)
+  })
+}
+
+function renderAnime(anime) {
+  return `<li>${anime}</li>`
+}
+
+function getUserAnimes(list) {
+  return fetch(`http://localhost:3000/api/v1/users/${userId.dataset.id}/${list}/animes`)
+    .then(res => res.json())
+}
 
 function renderLists() {
   console.log('lists');
@@ -87,7 +72,7 @@ function renderListsInLists(data) {
 }
 
 function listEl(list) {
-  return `<h4 class="list-group-item-action d-flex justify-content-between align-items-center" data-class="list-name">
+  return `<h4 class="list-group-item-action d-flex justify-content-between align-items-center" data-class="list-name" data-id="${list}">
   ${list}</h4>`
 }
 
