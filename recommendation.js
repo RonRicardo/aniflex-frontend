@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 })
 
 function searchRecommendation(term) {
-  return fetch(`http://localhost:3000/api/v1/animes/search/${term}`)
+  return fetch(`https://aniflex.herokuapp.com//api/v1/animes/search/${term}`)
     .then(res => res.json())
     .then(data => console.log(data))
 }

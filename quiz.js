@@ -11,7 +11,7 @@ function createAnimeObject(response) {
     name: response.title,
     description: response.description
   }
-  const url = 'http://localhost:3000/api/v1/animes'
+  const url = 'https://aniflex.herokuapp.com//api/v1/animes'
   const options = {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
@@ -70,7 +70,7 @@ getRandomIntInclusive = (min, max) => {
 }
 
  fetcher = (term) => {
-  fetch(`http://localhost:3000/api/v1/animes/search/${term}`)
+  fetch(`https://aniflex.herokuapp.com//api/v1/animes/search/${term}`)
     .then(res => res.json())
     .then(parsedResp => renderRecommendedShow(parsedResp))
   }
