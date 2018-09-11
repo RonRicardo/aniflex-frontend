@@ -10,7 +10,7 @@ Ran out of Animes to watch? Aniflex is here to help. Users can log in to search 
   * Postgres
 
 # Demo
-[Imgur](https://i.imgur.com/jaVnWJV.gifv)
+[Gif Demo!](https://drive.google.com/file/d/1nhiaZ7d--mTsczHkGwybzbhRnjAID3X3/view?usp=sharing)
 
 [Aniflex](https://aniflex.herokuapp.com/) -- username: test
 
