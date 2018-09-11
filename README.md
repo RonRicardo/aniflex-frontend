@@ -11,5 +11,7 @@ Ran out of Animes to watch? Aniflex is here to help. Users can log in to search 
 
 # Demo
 [Imgur](https://i.imgur.com/jaVnWJV.gifv)
+
 [Aniflex](https://aniflex.herokuapp.com/) -- username: test
+
 Heroku has to wake up the back-end server, so allow a moment for the shows to populate!
