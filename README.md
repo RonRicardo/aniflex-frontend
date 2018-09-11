@@ -1,9 +1,15 @@
-# aniflex-frontend
-JavaScript frontend for Aniflex project
+# Aniflex
+Ran out of Animes to watch? Aniflex is here to help. Users can log in to search for new shows and create lists with what they want to watch next. Results curated from [Jikan.moe's unofficial MyAnimeList api.](https://jikan.moe/)
 
-Features:
-* add anime to list
-* render view of lists and option to create new list
-  * get fetch of lists for user by user id 
-* make post req to create anime
-* make post req to create list associating anime and user
+# Technologies Used
+* Front-End
+  * JavaScript
+  * JQuery
+* Back-End
+  * Ruby on Rails API
+  * Postgres
+
+# Demo
+[Imgur](https://i.imgur.com/jaVnWJV.gifv)
+[Aniflex](https://aniflex.herokuapp.com/) -- username: test
+Heroku has to wake up the back-end server, so allow a moment for the shows to populate!
