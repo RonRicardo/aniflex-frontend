@@ -1,3 +1,5 @@
+const API = "https://aniflex-backend.herokuapp.com/api/v1/";
+
 document.addEventListener("DOMContentLoaded", () => {
   const welcomePic = document.getElementById("welcome-rand-img");
   const listPic = document.getElementById("list-rand-img");

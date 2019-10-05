@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   fetcher = term => {
-    fetch(`https://aniflex-backend.herokuapp.com/api/v1/animes/search/${term}`)
+    fetch(`{$API}animes/search/${term}`)
       .then(res => res.json())
       .then(parsedResp => renderRecommendedShow(parsedResp));
   };

@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function createList(listName) {
-    return fetch("https://aniflex-backend.herokuapp.com/api/v1/watch_lists", {
+    return fetch(API + "watch_lists", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -68,7 +68,7 @@ const renderRecommendedShow = response => {
 };
 
 function getUserLists() {
-  return fetch("https://aniflex-backend.herokuapp.com/api/v1/watch_lists")
+  return fetch(API + "watch_lists")
     .then(res => res.json())
     .then(
       data =>
