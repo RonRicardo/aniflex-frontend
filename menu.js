@@ -34,7 +34,7 @@ function renderAnime(anime) {
 
 function getUserAnimes(list) {
   return fetch(
-    `https://aniflex-backend.herokuapp.com//api/v1/users/${userId.dataset.id}/${list}/animes`
+    `https://aniflex-backend.herokuapp.com/api/v1/users/${userId.dataset.id}/${list}/animes`
   ).then(res => res.json());
 }
 
@@ -52,9 +52,9 @@ function renderLists() {
 }
 
 function getLists() {
-  return fetch(
-    "https://aniflex-backend.herokuapp.com//api/v1/watch_lists"
-  ).then(res => res.json());
+  return fetch("https://aniflex-backend.herokuapp.com/api/v1/watch_lists").then(
+    res => res.json()
+  );
 }
 
 function renderListsInLists(data) {

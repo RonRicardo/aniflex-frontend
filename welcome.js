@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function createUser(username) {
   const userId = document.getElementById("user-id");
-  const url = "https://aniflex-backend.herokuapp.com//api/v1/users";
+  const url = "https://aniflex-backend.herokuapp.com/api/v1/users";
   const options = {
     method: "POST",
     headers: { "Content-Type": "application/json" },

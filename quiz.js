@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: response.title,
       description: response.description
     };
-    const url = "https://aniflex-backend.herokuapp.com//api/v1/animes";
+    const url = "https://aniflex-backend.herokuapp.com/api/v1/animes";
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   fetcher = term => {
-    fetch(`https://aniflex-backend.herokuapp.com//api/v1/animes/search/${term}`)
+    fetch(`https://aniflex-backend.herokuapp.com/api/v1/animes/search/${term}`)
       .then(res => res.json())
       .then(parsedResp => renderRecommendedShow(parsedResp));
   };
