@@ -1,48 +1,39 @@
-document.addEventListener("DOMContentLoaded", ()=>{
-  console.log('loaded');
+document.addEventListener("DOMContentLoaded", () => {
+  const usernameForm = document.getElementById("username-form");
+  const usernameInput = document.getElementById("username-input");
 
-  const usernameForm = document.getElementById("username-form")
-  const usernameInput = document.getElementById("username-input")
+  usernameForm.addEventListener("submit", e => {
+    e.preventDefault();
+    const username = e.target.lastElementChild.value;
 
-  usernameForm.addEventListener("submit", (e) => {
-    e.preventDefault()
-    console.log('form submitted');
-    const username = e.target.lastElementChild.value
+    createUser(username);
+    usernameInput.value = "";
 
-    createUser(username)
-    console.log('username created');
+    const welcomePage = document.getElementById("welcome-page");
+    const menuPage = document.getElementById("menu-page");
 
-    usernameInput.value = ""
-
-    const welcomePage = document.getElementById("welcome-page")
-    const menuPage = document.getElementById("menu-page")
-
-    togglePages(menuPage)
-    togglePages(welcomePage)
-
-  })
-})
-
+    togglePages(menuPage);
+    togglePages(welcomePage);
+  });
+});
 
 function createUser(username) {
-  const userId = document.getElementById("user-id")
-  console.log('hit function');
-  const url = 'https://aniflex-backend.herokuapp.com//api/v1/users'
+  const userId = document.getElementById("user-id");
+  const url = "https://aniflex-backend.herokuapp.com//api/v1/users";
   const options = {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({name: username})
-  }
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name: username })
+  };
   return fetch(url, options)
     .then(res => res.json())
-    .then(data => userId.dataset.id = data.id)
-    .then(()=>console.log('set id'))
+    .then(data => (userId.dataset.id = data.id));
 }
 
 function togglePages(page) {
-  if ( $( page).is( ":hidden" ) ) {
-    $( page ).slideDown( "slow" );
+  if ($(page).is(":hidden")) {
+    $(page).slideDown("slow");
   } else {
-    $( page ).hide();
+    $(page).hide();
   }
 }
