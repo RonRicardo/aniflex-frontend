@@ -1,61 +1,58 @@
-document.addEventListener("DOMContentLoaded", ()=>{
-  console.log('test.js loaded');
-  const welcomePic = document.getElementById('welcome-rand-img')
-  const listPic = document.getElementById('list-rand-img')
-  const menuPic = document.getElementById('menu-rand-img')
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("test.js loaded");
+  const welcomePic = document.getElementById("welcome-rand-img");
+  const listPic = document.getElementById("list-rand-img");
+  const menuPic = document.getElementById("menu-rand-img");
 
-  let index = Math.floor((Math.random() * picArray.length))
+  let index = Math.floor(Math.random() * picArray.length);
   console.log(index);
-  welcomePic.src = picArray[index]
+  welcomePic.src = picArray[index];
 
-  const renderShowList = (event) => {
-    cardText.innerHTML = testRender
-  }
+  const renderShowList = event => {
+    cardText.innerHTML = testRender;
+  };
 
-  let cardText = document.querySelector('.card-text')
-  let renderingButton = document.querySelector('.btn.btn-primary')
-  //
-  // renderingButton.addEventListener('click', renderShowList)
-
+  let cardText = document.querySelector(".card-text");
+  let renderingButton = document.querySelector(".btn.btn-primary");
   // web pages
-  const welcomePage = document.getElementById("welcome-page")
-  const menuPage = document.getElementById("menu-page")
-  const listPage = document.getElementById("list-page")
-  const searchPage = document.getElementById("search-page")
-  const genreSelection = document.getElementById("genres")
-  const animeShowPage = document.getElementById("anime-show-page")
+  const welcomePage = document.getElementById("welcome-page");
+  const menuPage = document.getElementById("menu-page");
+  const listPage = document.getElementById("list-page");
+  const searchPage = document.getElementById("search-page");
+  const genreSelection = document.getElementById("genres");
+  const animeShowPage = document.getElementById("anime-show-page");
 
-  const userId = document.getElementById("user-id")
+  const userId = document.getElementById("user-id");
 
-// user navigation via keydown
-// plans to add icons for users to intuitively know the keydown events
-// maybe altogether get rid of navbar if this works well for clean look
-  document.addEventListener("keydown", (e)=>{
-    if (e.key==="ArrowDown") {
-      console.log('log out');
-      $(menuPage).hide()
-      $(listPage).hide()
-      $(searchPage).hide()
-      $(animeShowPage).hide()
-      $(welcomePage).slideDown("medium")
-      if(userId.getAttribute("data-id") === null || userId.getAttribute("data-id") === "") {
+  // user navigation via keydown
+  document.addEventListener("keydown", e => {
+    if (e.key === "ArrowDown") {
+      console.log("log out");
+      $(menuPage).hide();
+      $(listPage).hide();
+      $(searchPage).hide();
+      $(animeShowPage).hide();
+      $(welcomePage).slideDown("medium");
+      if (
+        userId.getAttribute("data-id") === null ||
+        userId.getAttribute("data-id") === ""
+      ) {
       } else {
-        alert("See you soon!")
+        alert("See you soon!");
       }
-      userId.dataset.id = ""
-    } else if(e.key==="ArrowUp"){
-      console.log('menu');
-      $(welcomePage).hide()
-      $(listPage).hide()
-      $(searchPage).hide()
-      $(animeShowPage).hide()
-      index = Math.floor((Math.random() * picArray.length))
-      menuPic.src = picArray[index]
-      $(menuPage).slideDown("medium")
+      userId.dataset.id = "";
+    } else if (e.key === "ArrowUp") {
+      console.log("menu");
+      $(welcomePage).hide();
+      $(listPage).hide();
+      $(searchPage).hide();
+      $(animeShowPage).hide();
+      index = Math.floor(Math.random() * picArray.length);
+      menuPic.src = picArray[index];
+      $(menuPage).slideDown("medium");
     }
-  })
-
-})
+  });
+});
 
 const picArray = [
   "https://qph.fs.quoracdn.net/main-qimg-61b6fdbf90bb8fa331483eddb0d5e124-c",
@@ -79,4 +76,4 @@ const picArray = [
   "http://www.intunedonline.net/wp-content/uploads/2016/09/Makoto-shinkai-your-name-anime-film.jpg",
   "https://art-catalog.org/wp-content/uploads/2018/04/best-anime-drawings-of-all-time-47e71bedfc2f67fe267fb7d64d7a3ac2.jpg",
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz1bKKmjtFIgbE9qyMACnuc6ixwIV7ERto9BP0JI3YP6I5PJzq"
-]
+];
