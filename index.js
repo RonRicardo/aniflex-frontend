@@ -1,11 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("test.js loaded");
   const welcomePic = document.getElementById("welcome-rand-img");
   const listPic = document.getElementById("list-rand-img");
   const menuPic = document.getElementById("menu-rand-img");
 
   let index = Math.floor(Math.random() * picArray.length);
-  console.log(index);
   welcomePic.src = picArray[index];
 
   const renderShowList = event => {
@@ -27,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // user navigation via keydown
   document.addEventListener("keydown", e => {
     if (e.key === "ArrowDown") {
-      console.log("log out");
       $(menuPage).hide();
       $(listPage).hide();
       $(searchPage).hide();
@@ -42,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       userId.dataset.id = "";
     } else if (e.key === "ArrowUp") {
-      console.log("menu");
       $(welcomePage).hide();
       $(listPage).hide();
       $(searchPage).hide();

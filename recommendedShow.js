@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("recommendedShow page loaded");
-
   const addAnimeToListBtn = document.getElementById("add-to-list");
   const listView = document.getElementById("add-anime-view");
   const submitAnimetoListForm = document.getElementById("create-list-form");
@@ -12,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const listInputLabel = document.getElementById("new-list-input-label");
 
   addAnimeToListBtn.addEventListener("click", e => {
-    console.log("add to list button clicked");
     $(listInputLabel).show();
     $(listName).show();
     // show list view
@@ -27,13 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   submitAnimetoListForm.addEventListener("submit", e => {
     e.preventDefault();
-    console.log("add this anime to this list!");
-
     if (!!listName.value) {
-      console.log("creating a new list to add anime to");
       createList(listName.value);
     } else {
-      console.log("list was selected to add to");
       const selectedList = Array.from(listCollection.children).filter(x => {
         return x.selected === true;
       })[0].value;

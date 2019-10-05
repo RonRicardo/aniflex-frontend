@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sendToBackend = randomGenre;
         break;
       default:
-        console.log("No one should actually see this ever, but ok.");
+        sendToBackend = randomGenre;
     }
     fetcher(sendToBackend);
   };

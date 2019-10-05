@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("loaded");
   const listOfLists = document.getElementById("list-of-lists");
   const userId = document.getElementById("user-id");
   const userAnimePage = document.getElementById("user-animes-view");
@@ -40,7 +39,6 @@ function getUserAnimes(list) {
 }
 
 function renderLists() {
-  console.log("lists");
   if (userId.dataset.id !== "") {
     togglePages(menuPage);
     listOfLists.innerHTML = "";
@@ -87,7 +85,6 @@ function userListNames(lists) {
 }
 
 function renderSearch() {
-  console.log("search");
   const searchPic = document.getElementById("search-rand-img");
   $(menuPage).hide();
   $(animeShowPage).hide();
